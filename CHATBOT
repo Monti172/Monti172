@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Chatbot {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String pregunta;
+
+        System.out.println("¡Hola! Soy tu chatbot. ¿Qué quieres preguntarme?");
+
+        do {
+            pregunta = scanner.nextLine();
+            pregunta = pregunta.toLowerCase();
+
+            // Aquí puedes agregar más lógica para respuestas más complejas
+            // Por ejemplo, usar una base de datos para almacenar preguntas y respuestas
+
+            System.out.println(obtenerRespuesta(pregunta));
+        } while (!pregunta.equals("salir"));
+
+        System.out.println("¡Hasta luego!");
+        scanner.close();
+    }
+
+    private static String obtenerRespuesta(String pregunta) {
+        // Lógica para obtener la respuesta, puede ser una búsqueda en una base de datos,
+        // un llamado a una API, o una simple comparación con palabras clave
+        if (pregunta.contains("hola")) {
+            return "Hola! ¿En qué te puedo ayudar?";
+        } else {
+            return "Aún no entiendo esa pregunta.";
+        }
+    }
+}
